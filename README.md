@@ -17,7 +17,8 @@ A Flickr clone developed with React🚀 and Flickr API
 
 
 ### Preview
-<img src="./public/preview.gif" />
+<img src="./public/desktop.gif" />
+<img src="./public/mobile.gif" />
 
 
 ### To run this on Local machine

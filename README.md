@@ -1,4 +1,4 @@
-# Unsplash Clone
+# Flickr
 A Flickr clone developed with React🚀 and Flickr API
 
 

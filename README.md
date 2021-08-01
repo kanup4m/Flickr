@@ -16,8 +16,10 @@ A Flickr clone developed with React🚀 and Flickr API
 * **Netlify** (Hosting service)
 
 
-### Preview
+### Desktop Preview
 <img src="./public/desktop.gif" />
+
+### Mobile Preview
 <img src="./public/mobile.gif" />
 
 

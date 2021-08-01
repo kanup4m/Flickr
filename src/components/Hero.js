@@ -29,7 +29,6 @@ function Hero() {
             <div className="hero__content">
                 <div className="hero__contentWrapper">
                     <h1 className="hero__contentTitle">Flickr</h1>
-
                     <br />
                     <form onSubmit={handleSearchSubmit} className="hero__contentInput">
                         <SearchIcon className="header__icon" />

@@ -9,6 +9,8 @@ import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
 import { useHistory } from "react-router-dom"
 import Error from '../components/404'
 import Modal from '../components/Modal'
+import IconButton from '@material-ui/core/IconButton';
+import NavigationOutlinedIcon from '@material-ui/icons/NavigationOutlined';
 
 
 
@@ -20,6 +22,12 @@ function SearchPage() {
     const [loading, setLoading] = useState(true)
     const [selectedImg, setSelectedImg] = useState(null);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 
     useEffect(() => {
         fetchImages()
@@ -56,18 +64,20 @@ function SearchPage() {
         <>
             <div className="wrapper">
                 <div className="container">
-                    {/* <Header /> */}
                     <div className="header__wrapper">
                         <h1 className="title ">
                             <ArrowBackOutlinedIcon className="header__rightAvatar" onClick={goToHomePage}>GO back </ArrowBackOutlinedIcon>
-                            {searchTerm}</h1> </div>
+                            {searchTerm}
+                        </h1>
+                    </div>
                     <InfiniteScroll
                         dataLength={images.length} //This is important field to render the next data
                         next={fetchImages}
                         hasMore={true}
                         style={{
                             overflow: 'visible',
-                        }} >
+                        }}
+                    >
                         <div className="images__container">
                             {images.length < 1 && loading === false ? <Error /> : (
                                 <div>
@@ -80,6 +90,9 @@ function SearchPage() {
                             )}
                         </div>
                     </InfiniteScroll>
+                    <IconButton aria-label="delete" className="scrollBtn">
+                        <NavigationOutlinedIcon style={{ fontSize: 60 }} className="scrollBtn" onClick={scrollToTop} />
+                    </IconButton>
                     {selectedImg && (
                         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
                     )}

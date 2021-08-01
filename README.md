@@ -22,7 +22,7 @@ A Flickr clone developed with React🚀 and Flickr API
 
 ### To run this on Local machine
 * Clone the repo, install all the dependcies from package.json by typing `npm install`
-* Create a API KEY from [unsplash](https://unsplash.com/oauth/applications)
+* Create a API KEY from [Flickr](https://www.flickr.com/services/api/flickr.photos.getRecent.html)
 * Create a file with name `secrets.js` inside `src` and place your api key as shown below
 ```javascript 
         export const API_KEY = 'PLACE YOUR API KEY HERE'   

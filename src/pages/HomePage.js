@@ -6,12 +6,21 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { motion } from 'framer-motion';
 import { getRecentImages } from "../flickr"
 import Modal from '../components/Modal'
+import IconButton from '@material-ui/core/IconButton';
+import NavigationOutlinedIcon from '@material-ui/icons/NavigationOutlined';
+
 function HomePage() {
     const [images, setImages] = useState([])
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
     const [selectedImg, setSelectedImg] = useState(null);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 
     useEffect(() => {
         fetchImages()
@@ -32,12 +41,16 @@ function HomePage() {
 
 
 
+
     return (
         <>
             <Hero />
             <div className="wrapper">
                 <div className="container">
                     <div className="images__container">
+                        <IconButton aria-label="delete" className="scrollBtn">
+                            <NavigationOutlinedIcon style={{ fontSize: 60 }} className="scrollBtn" onClick={scrollToTop} />
+                        </IconButton>
                         <InfiniteScroll
                             dataLength={images.length} //This is important field to render the next data
                             next={fetchImages}
@@ -53,6 +66,7 @@ function HomePage() {
 
                             )))}
                         </InfiniteScroll>
+
                     </div>
                 </div>
             </div>
